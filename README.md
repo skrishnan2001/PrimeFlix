@@ -1,10 +1,7 @@
-# WhatToWatch
-
-Play with react native (Expo), styled-components and [themoviedb API](https://developers.themoviedb.org/) 🥳
+# PrimeFlix
+Find movies & tv shows guide recommendations - Looking for a movie or series idea for tonight? PrimeFlix is the simplest and fastest way to discover movies, series and actors. It's an application based on themoviedb (TMDb) database.
 
 ![alt image](https://user-images.githubusercontent.com/50322149/149024555-ebc3d433-a2db-423d-b162-cfe52ff9faf4.png)
-
-PrimeFlix is the simplest and fastest way to discover movies, series and actors.
 
 ---
 
@@ -19,15 +16,9 @@ PrimeFlix is the simplest and fastest way to discover movies, series and actors.
 5. Install the required dependencies using the command
 ```
 npm install
-
 ```
 6. To run the app in expo, use the command
 ```
 npm start
-
 ```
-
-## Demo
-
-- Expo app : https://expo.io/@thehaut/WhatToWatch
 
