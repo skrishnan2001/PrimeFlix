@@ -34,8 +34,8 @@ export default {
     favicon: 'src/assets/favicon.png'
   },
   extra: {
-    "eas": {
-      "projectId": "7f427b3f-a23a-4e31-a68e-ccead8308bcf"
+    eas: {
+      projectId: '7f427b3f-a23a-4e31-a68e-ccead8308bcf'
     },
     theMovieDbApiKey: process.env.THEMOVIEDB_API_KEY
   }
