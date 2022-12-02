@@ -1,5 +1,5 @@
 # PrimeFlix
-Find movies & tv shows guide recommendations - Looking for a movie or series idea for tonight? PrimeFlix is the simplest and fastest way to discover movies, series and actors. It's an application based on themoviedb (TMDb) database.
+Find movies & TV shows and get recommendations - Looking for a movie or series idea for tonight? PrimeFlix is the simplest and fastest way to discover movies, series and actors. It's an application based on themoviedb (TMDb) database.
 
 ![alt image](https://user-images.githubusercontent.com/50322149/149024555-ebc3d433-a2db-423d-b162-cfe52ff9faf4.png)
 
@@ -17,8 +17,16 @@ Find movies & tv shows guide recommendations - Looking for a movie or series ide
 ```
 npm install
 ```
-6. To run the app in expo, use the command
+6. Replace the firebase.ts present in src/config with your config file. (Can be downloaded from firebase project's settings)
+7. To run the app in expo, use the command
 ```
 npm start
+```
+
+## To Build the APK
+
+- To build the APK for android devices, type the command:
+```
+eas build -p android --profile preview
 ```
 
