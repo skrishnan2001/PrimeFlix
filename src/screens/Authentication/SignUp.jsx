@@ -10,22 +10,18 @@ import BackButton from '../../components/AuthComponents/BackButton'
 import { theme } from '../../core/theme'
 import { emailValidator } from '../../helpers/emailValidator'
 import { passwordValidator } from '../../helpers/passwordValidator'
-import { nameValidator } from '../../helpers/nameValidator'
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 const auth = getAuth();
 
 
 export default function SignUpScreen({ navigation }) {
-  const [name, setName] = useState({ value: '', error: '' })
   const [email, setEmail] = useState({ value: '', error: '' })
   const [password, setPassword] = useState({ value: '', error: '' })
 
   async function onSignUpPressed() {
-    const nameError = nameValidator(name.value)
     const emailError = emailValidator(email.value)
     const passwordError = passwordValidator(password.value)
-    if (emailError || passwordError || nameError) {
-      setName({ ...name, error: nameError })
+    if (emailError || passwordError) {
       setEmail({ ...email, error: emailError })
       setPassword({ ...password, error: passwordError })
       return
@@ -34,10 +30,6 @@ export default function SignUpScreen({ navigation }) {
       await createUserWithEmailAndPassword(auth, email.value, password.value);
       navigation.navigate('Sign In');
     } catch (error) {
-      setName({
-        ...name,
-        error: '',
-      }),
         setEmail({
           ...email,
           error: '',
@@ -53,15 +45,8 @@ export default function SignUpScreen({ navigation }) {
     <Background>
       <BackButton goBack={navigation.goBack} />
       <Logo />
-      <Header>New Account</Header>
-      <TextInput
-        label="Name"
-        returnKeyType="next"
-        value={name.value}
-        onChangeText={(text) => setName({ value: text, error: '' })}
-        error={!!name.error}
-        errorText={name.error}
-      />
+      <Header>New User</Header>
+      
       <TextInput
         label="Email"
         returnKeyType="next"
@@ -74,6 +59,7 @@ export default function SignUpScreen({ navigation }) {
         textContentType="emailAddress"
         keyboardType="email-address"
       />
+
       <TextInput
         label="Password"
         returnKeyType="done"

@@ -6,15 +6,18 @@ const auth = getAuth();
 
 export function useAuth() {
     const [user, setUser] = React.useState<User>();
+    const [loading, setLoading] = React.useState(true);
 
     useEffect(() => {
         const unsubscribeFromAuthStateChanged = onAuthStateChanged(auth, (user) => {
             if (user) {
                 // User is signed in
                 setUser(user);
+                setLoading(false);
             } else {
                 // User is signed out
                 setUser(undefined);
+                setLoading(false);
             }
         });
 
@@ -23,5 +26,6 @@ export function useAuth() {
 
     return {
         user,
+        loading
     };
 }

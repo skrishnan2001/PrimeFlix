@@ -44,7 +44,6 @@ export default function SignInScreen({ navigation }) {
 
   return (
     <Background>
-      <BackButton goBack={navigation.goBack} />
       <Logo />
       <Header>PrimeFlix</Header>
       <TextInput
