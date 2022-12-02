@@ -7,7 +7,7 @@ Find movies & TV shows and get recommendations - Looking for a movie or series i
 
 [![runs with expo](https://img.shields.io/badge/Runs%20with%20Expo-4630EB.svg?style=flat-square&logo=EXPO&labelColor=f3f3f3&logoColor=000)](https://expo.io/)
 
-## How to test
+## Running the app in Expo
 
 1. Clone the repository
 2. Create your own api key from [themoviedb](https://developers.themoviedb.org/)
@@ -17,7 +17,7 @@ Find movies & TV shows and get recommendations - Looking for a movie or series i
 ```
 npm install
 ```
-6. Replace the firebase.ts present in src/config with your config file. (Can be downloaded from firebase project's settings)
+6. Replace the firebase.ts present in ```src/config``` folder with your firebase config file. 
 7. To run the app in expo, use the command
 ```
 npm start
@@ -25,7 +25,7 @@ npm start
 
 ## To Build the APK
 
-- To build the APK for android devices, type the command:
+- To build the APK for android devices, use the command:
 ```
 eas build -p android --profile preview
 ```
