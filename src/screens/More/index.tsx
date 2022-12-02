@@ -3,11 +3,15 @@ import { FormattedMessage } from 'react-intl';
 import { Linking } from 'react-native';
 
 import { Box } from 'components/Box';
-import { EmailIcon, SmileIcon, StarFillIcon } from 'components/Icon';
+import { EmailIcon, SmileIcon, StarFillIcon, CrossIcon } from 'components/Icon';
 import { LOCALE_AUTO, LOCALE_EN, LOCALE_FR } from 'constants/locales';
 import { useHeaderHeights } from 'constants/statusBar';
 import { useLocale } from 'contexts/locales';
 import { BasicLayout } from 'layouts/Basic';
+import { getAuth, signOut } from "firebase/auth";
+
+const auth = getAuth();
+
 
 import { Item } from './Item';
 
@@ -33,6 +37,10 @@ export function MoreScreen() {
 
   function openMyWebsite() {
     Linking.openURL('https://github.com/skrishnan2001');
+  }
+
+  function logOut() {
+    signOut(auth);
   }
 
   return (
@@ -116,6 +124,21 @@ export function MoreScreen() {
           ]}
           title={<FormattedMessage id="more.sources.title" />}
         />
+
+        <Item
+          mt="lg"
+          items={[
+            {
+              name: "Logout",
+              description: "",
+              icon: CrossIcon,
+              key: 'exit',
+              onPress: logOut
+            }
+          ]}
+          title={"Do you want to leave?"}
+        />
+
       </Box>
     </BasicLayout>
   );

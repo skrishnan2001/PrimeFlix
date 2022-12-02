@@ -2,6 +2,8 @@ import 'intl';
 import 'intl/locale-data/jsonp/en';
 import 'intl/locale-data/jsonp/fr';
 
+import './config/firebase';
+
 import {
   Poppins_400Regular,
   Poppins_600SemiBold,
